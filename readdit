@@ -1,122 +1,24 @@
+Sub AnimateChart()
 
-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
+    Dim i As Integer
 
+    Range("E2:G13").ClearContents
 
+    For i = 2 To 13
 
+        'Copy month
+        Range("E" & i).Value = Range("A" & i).Value
+        
+        'Copy sales gradually
+        Range("F" & i).Value = Range("B" & i).Value
+        Range("G" & i).Value = Range("C" & i).Value
 
+        DoEvents
 
+        Application.Wait Now + TimeValue("00:00:01")
 
+    Next i
 
+    MsgBox "Animation Finished"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import java.util.*;
-public class Login{
-public static void main(String[]args){
-Scanner sc = new Scanner(System.in);
-System.out.println("enter name");
-String name = sc.nextLine();
-System.out.println("enter pass");
-String pass = sc.nextLine();
-if(name.equals("admin")&&pass.equals()
-
-}
-
-
-}
-
-
-
-
-
-FROM openjdk:17
-
-WORKDIR /app
-
-COPY LoginApp.java .
-
-RUN javac LoginApp.java
-
-CMD ["java", "LoginApp"]
-
-
-
-
-
-
-
-
-
+End Sub
